@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float Speed = 15;
+    public float Gravity = 5f;
     private Rigidbody rb;
 
     //[SerializeField]
@@ -25,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
             transform.InverseTransformDirection(
                 new Vector3(
                     Input.GetAxis("Horizontal") * Speed,
-                    0f,
+                    -1f * Gravity,
                     Input.GetAxis("Vertical") * Speed
                 )
               );
